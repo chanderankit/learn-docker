@@ -115,6 +115,29 @@ This document contains commonly used Docker commands for managing images, contai
 
 ---
 
+## 🧩 To Print Containers Env variables
+
+- `docker exec <container_name_or_id> printenv` 
+
+   To print the environment variables of a running container
+
+
+- `docker inspect <container_name_or_id>`
+
+  To Reconstruct the docker run command of a running container - Basic reconstruction:
+
+
+- `docker inspect --format='docker run -d {{range .Config.Env}}-e {{.}} {{end}}--name {{.Name}} {{.Config.Image}} {{range .Config.Cmd}}{{.}} {{end}}' <container_name>`
+
+  To Reconstruct the docker run command of a running container - extract ENV, name, and image
+
+
+- `docker inspect --format '{{range $k,$v := .NetworkSettings.Networks}}{{$k}}{{end}}' <container_name>`
+
+  To get network name of a running container
+
+---
+
 ## ✅ Example: Running a PostgreSQL Container
 
 ```bash
