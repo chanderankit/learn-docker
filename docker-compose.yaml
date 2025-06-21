@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    container_name: pg
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=root
+    volumes:
+      - C:\Users\Administrator\Downloads\pg-data:/var/lib/postgresql/data
+
+  testapp:
+    image: testapp:1.0
+    container_name: testapp
+    ports:
+      - 8080:8080
