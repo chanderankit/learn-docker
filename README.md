@@ -85,10 +85,10 @@ This document contains commonly used Docker commands for managing images, contai
 
 ## ⚙️ Docker Compose
 
-- `docker-compose -f [file] up -d`  
+- `docker compose -f [file] up -d`  
   Start all containers defined in a `docker-compose.yml` file in detached mode.
 
-- `docker-compose -f [file] down`  
+- `docker compose -f [file] down`  
   Stop and remove all containers and resources created by the compose file.
 
 ---
